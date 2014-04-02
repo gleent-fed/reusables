@@ -1,0 +1,31 @@
+// Paypal Form
+// CFORM 7 Additional Settings
+
+// #DIRECT
+on_sent_ok: "select_txt = jQuery('#paypal-direct-amount').val().split('-')[0];"
+on_sent_ok: "select_val = jQuery('#paypal-direct-amount').val().split('-')[1];"
+on_sent_ok: "select_cur_code = jQuery('#curcodedirect').val();"
+
+on_sent_ok: "location = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=getbestdesigns@gmail.com&amount=' +select_val+ '&currency_code='+select_cur_code+'&item_name=' +select_txt;"
+
+
+// #CREDIT
+on_sent_ok: "select_cur_code = jQuery('#curcodecredit').val();"
+on_sent_ok: "select_txt = jQuery('#rcp_services').val().split('-')[0];"
+on_sent_ok: "select_val = jQuery('#rcp_services').val().split('-')[1];"
+
+on_sent_ok: "fname = jQuery('#fname').val();"
+on_sent_ok: "lname = jQuery('#lname').val();"
+on_sent_ok: "tel = jQuery('#tel').val();"
+on_sent_ok: "address = jQuery('#address').val();"
+on_sent_ok: "city = jQuery('#city').val();"
+on_sent_ok: "postalcode = jQuery('#postalcode').val();"
+on_sent_ok: "state = jQuery('#state').val();"
+
+on_sent_ok: "cardno = jQuery('#cardno').val();"
+on_sent_ok: "csc = jQuery('#csc').val();"
+on_sent_ok: "expdate_year = jQuery('#expdate').val().split('-')[0];"
+on_sent_ok: "expdate_month = jQuery('#expdate').val().split('-')[1];"
+on_sent_ok: "expdate_day = jQuery('#expdate').val().split('-')[2];"
+
+on_sent_ok: "location = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=getbestdesigns@gmail.com&amount='+select_val+'&currency_code='+select_cur_code+'&item_name='+select_txt+'&first_name='+fname+'&last_name='+lname+'&H_PhoneNumber='+tel+'&address1='+address+'&city='+city+'&zip='+postalcode+'&state='+state+'&cc_number='+cardno+'&cvv2_number='+csc+'&expdate_month='+expdate_month+'&expdate_year='+expdate_year;"
